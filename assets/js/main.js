@@ -38,8 +38,8 @@ const str=[];
 			let secound=a.parentElement.parentElement.firstElementChild;
 			let pass = new Text(first,secound);
 
-			question.value = pass.question;
-			answer.value =pass.answer;
+			question.value = pass.answer;
+			answer.value =pass.question ;
 			
 			e.target.parentElement.parentElement.parentElement.remove();
 			
