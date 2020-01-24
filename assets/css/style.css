@@ -1,0 +1,228 @@
+/*
+  Theme Name: 
+  Author: 
+  Support: 
+  Description: 
+  Version: 1.0
+*/
+
+
+/* CSS Index 
+-----------------------------------
+01.
+02.
+03.
+04.
+05.
+06.
+07.
+08.
+09.
+10.
+-----------------------------------
+CSS Index End */
+
+
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600,700|Poppins:400,500&display=swap');
+
+/* 
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+*/
+
+
+/************** Default CSS **************/
+
+:root {
+    --body: #252527;
+    --p: #fff;
+    --a: #fff;
+    --p: #fff;
+    --h: #fff;
+    --dark: #1F1F20;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: var(--body);
+}
+
+a,
+.button,
+button {
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer
+}
+
+ul,
+ol {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--h);
+    text-transform: capitalize;
+    margin-top: 0px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--p);
+    margin-bottom: 15px;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--a);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/************** Default CSS End **************/
+
+
+/************** Template CSS **************/
+
+.question-box {
+    max-width: 350px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.question h4 {
+    color: #000;
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+}
+
+.answer h4 {
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+}
+button.btn.save {
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+.answer-box {
+    border: 1px solid #4c4c4a;
+    padding: 20px;
+    margin-top: 50px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+h3.question-heading {
+    color: #000;
+    font-weight: 600;
+    line-height: 35px;
+    font-size: 22px;
+    margin: 0px;
+}
+
+p.answer-pera {
+    color: #000;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.edit-box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+button.btn.edit {
+    border: 1px solid #000000a6;
+}
+
+button.btn.delete {
+    border: 1px solid #000000a6;
+}
+
+span.hide-answer {
+    color: #227be8;
+    cursor: pointer;
+    padding: 10px 0px;
+    display: block;
+}
+button.btn.add-question {
+    border: 2px solid #fff;
+    margin: 25px 0px;
+    color: #fff;
+}
+.answer-pera{
+    display: none;
+}
+/************** Template CSS End **************/
