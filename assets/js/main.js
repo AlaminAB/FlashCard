@@ -13,11 +13,9 @@ function evetnListeners(){
 	const answer_box=document.querySelector(".answer-box");
 	const question_box=document.querySelector(".question-box");
 	const insert=document.querySelector(".insert-box");
-	let element=0;
-const str=[];
 
 	let mainUI =new UI();
-
+	const arry= [""];
 	insert.addEventListener("click",function(e){
 		if(e.target.classList.contains("delete")){
 			e.target.parentElement.parentElement.parentElement.remove();
@@ -41,8 +39,14 @@ const str=[];
 			question.value = pass.answer;
 			answer.value =pass.question ;
 			
+			// remove answer box
 			e.target.parentElement.parentElement.parentElement.remove();
-			
+
+			// if queston box hide it will be show 
+			if(!question_box.classList.contains("d-block")){
+				question_box.classList.add("d-block");
+				
+			}
 
 		}
 		
@@ -50,8 +54,8 @@ const str=[];
 
 	close.addEventListener("click",function(){
 		mainUI.show_hide(question_box);
-			question.value = "";
-			answer.value ="";
+		question.value = "";
+		answer.value ="";
 	});
 
 	add_question.addEventListener("click",function(){
@@ -60,11 +64,25 @@ const str=[];
 
 	save.addEventListener("click",function(e){
 		e.preventDefault();
+		
 		let pass = new value(question,answer)
-		mainUI.answer(insert,pass);
+
+		for(let a=0; a<arry.length; a++){
+			if(!(arry[a] == question.value)){
+				mainUI.answer(insert,pass);
+					break;
+				
+			
+			}else{
+				alert("already have this question")
+				
+			}
+		}
+		
+arry.push(question.value);
 		question.value = "";
 		answer.value = "";
-		element++;
+		console.log(arry)
 	})
 
 
@@ -90,38 +108,25 @@ UI.prototype.Show = function(show){
 // answer 
 
 UI.prototype.answer= function(parent,val){
-		const str=[" "];
-
-
+	
 	if(question.value == "" || answer.value == ""){
 
 		alert("please add info")
 	}else{
 		
-	for(let a=0; a<str.length; a++){
-
-		if(str[a]== question.value){
-			alert("new valu")
-
-				
-	}else{
-		str.push(question.value)
 		let div = document.createElement("div");
-	div.classList.add("col-md-4");
-	div.innerHTML=`<div class="answer-box"><h3 class="question-heading">${val.question}</h3><span class="hide-answer">show/Hide</span>
-	<div class="answer-text answer-pera">${val.answer}</div>
-	<div class="edit-box">
-	<button class="btn edit">Edit</button>
-	<button class="btn delete">Delete</button>
-	</div>
-	</div>
-	`;
-	parent.appendChild(div);
-		}
-break;
-	}
+		div.classList.add("col-md-4");
+		div.innerHTML=`<div class="answer-box"><h3 class="question-heading">${val.question}</h3><span class="hide-answer">show/Hide</span>
+		<div class="answer-text answer-pera">${val.answer}</div>
+		<div class="edit-box">
+		<button class="btn edit">Edit</button>
+		<button class="btn delete">Delete</button>
+		</div>
+		</div>
+		`;
+		parent.appendChild(div);
 
-
+		
 	}
 	
 
